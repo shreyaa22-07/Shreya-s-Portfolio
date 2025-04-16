@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya Gupta | Marketing Professional</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #7c5295;
+            --secondary-color: #9d65c9;
+            --accent-color: #d4a5ff;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --section-bg: #f1f1f1;
+        }
+
+        .dark-mode {
+            --primary-color: #a567db;
+            --secondary-color: #7c3aed;
+            --accent-color: #5b21b6;
+            --text-color: #e0e0e0;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --border-color: #333;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --section-bg: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-right: 2rem;
+            margin-bottom: 1rem;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .profile-image i {
+            font-size: 80px;
+            color: #8a8a8a;
+        }
+
+        .header-content {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-right: 1.5rem;
+        }
+
+        .contact-item i {
+            margin-right: 0.5rem;
+        }
+
+        .header-actions {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.3);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        .section-title {
+            position: relative;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .section-title i {
+            margin-right: 0.5rem;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--accent-color);
+            top: 5px;
+            bottom: 0;
+            left: 18px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: 3px solid var(--accent-color);
+            left: 9px;
+            top: 5px;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-organization {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-description ul {
+            padding-left: 1.5rem;
+        }
+
+        .timeline-description li {
+            margin-bottom: 0.25rem;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--section-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category h3 i {
+            margin-right: 0.5rem;
+        }
+
+        .skill-list {
+            list-style-type: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .certification-card {
+            background: var(--section-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            transition: transform 0.3s;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .certification-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .interests-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            padding: 1rem 0;
+        }
+
+        .interest-tag {
+            background: var(--section-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s;
+            cursor: default;
+        }
+
+        .interest-tag:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .interest-tag i {
+            margin-right: 0.5rem;
+        }
+
+        .language-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .language-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .language-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .language-level {
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.6rem 1.2rem;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn i {
+            margin-right: 0.5rem;
+        }
+
+        .btn:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--card-bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            transition: all 0.3s;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo i {
+            margin-right: 0.5rem;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-item {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        /* Progress bars for skills */
+        .skill-progress {
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+            overflow: hidden;
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 4px;
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+
+        /* Project gallery */
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--section-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .project-image i {
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px var(--shadow-color);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            transform: translateY(20px);
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .nav-items {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                padding: 1rem;
+                box-shadow: 0 5px 10px var(--shadow-color);
+            }
+
+            .nav-items.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin-right: 0;
+            }
+
+            .header-content {
+                text-align: center;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .header-actions {
+                justify-content: center;
+            }
+
+            .skills-container, .certifications, .project-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-marker {
+                left: 6px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .theme-toggle, .btn, nav, .back-to-top {
+                display: none;
+            }
+
+            body {
+                background-color: white;
+                color: black;
+            }
+
+            .section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <i class="fas fa-code"></i> Shreya Gupta
+            </a>
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-items" id="navItems">
+                <a href="#profile" class="nav-item">Profile</a>
+                <a href="#experience" class="nav-item">Experience</a>
+                <a href="#education" class="nav-item">Education</a>
+                <a href="#certifications" class="nav-item">Certifications</a>
+                <a href="#skills" class="nav-item">Skills</a>
+                <a href="#languages" class="nav-item">Languages</a>
+                <a href="#interests" class="nav-item">Interests</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="profile-container">
+            <div class="profile-image">
+                <img src="Shreya G.jpg" alt="Shreya Gupta">
+            </div>   
+            <div class="header-content">
+                <h1>Shreya Gupta</h1>
+                <p class="tagline">Aspiring Marketing Professional | Passionate About Advertising Trends | Digital Marketing Certified</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>shreya.gupta.5946@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/shreyag22</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Greater NOIDA, India</span>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="#" class="btn" id="downloadCV">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                    <a href="mailto:shreya.gupta.5946@gmail.com" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" id="profile">
+            <h2 class="section-title"><i class="fas fa-user-circle"></i> Profile</h2>
+            <p>Highly motivated and curious student of Marketing with a strong interest in analyzing advertising and digital marketing trends. Proficient in SEO strategy, data management, and marketing analytics. Strong verbal and written communication skills, and able to work both independently and as part of a team.</p>
+        </section>
+
+        <section class="section" id="experience">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">May 2024 – August 2024</div>
+                    <h3 class="timeline-title">Marketing & Communications Intern</h3>
+                    <div class="timeline-organization">CRY (Child Rights and You)</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Contributed to the ideation and execution of digital campaigns promoting child rights and education</li>
+                            <li>Assisted in crafting social media content tailored for awareness and engagement</li>
+                            <li>Conducted research on current social trends to inform campaign strategy</li>
+                            <li>Supported the coordination of outreach events and storytelling initiatives</li>
+                            <li>Collaborated with the design team for visual campaign assets</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">Ongoing</div>
+                    <h3 class="timeline-title">Media Cell Team Member</h3>
+                    <div class="timeline-organization">IIM Bangalore</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Contributed to the creation and curation of internal and external communication materials</li>
+                            <li>Managed content strategy and planning for institutional outreach and engagement</li>
+                            <li>Served as Point of Contact (POC) for the Newsletter Project and Admission Drive initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">September 2024 – Present</div>
+                    <h3 class="timeline-title">Volunteer</h3>
+                    <div class="timeline-organization">CRY (Child Rights and You)</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Actively engaged in community outreach and awareness drives supporting children's rights</li>
+                            <li>Assisted with digital campaigns and content creation for social impact initiatives</li>
+                            <li>Coordinated with internal teams to gather stories, testimonials, and data for ongoing campaigns</li>
+                            <li>Contributed to engagement strategies across social media and email channels</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="education">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <h3 class="timeline-title">Bachelor of Business Administration (BBA – Digital Business & Entrepreneurship)</h3>
+                    <div class="timeline-organization">Indian Institute of Management Bangalore</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">2023-24</div>
+                    <h3 class="timeline-title">Senior School Certificate (Class 12)</h3>
+                    <div class="timeline-organization">Kaushalya World School, Greater NOIDA</div>
+                    <div class="timeline-description">
+                        <p>Percentage: 83%</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-date">2021-22</div>
+                    <h3 class="timeline-title">High School Certificate (Class 10)</h3>
+                    <div class="timeline-organization">Somerville School, Greater NOIDA</div>
+                    <div class="timeline-description">
+                        <p>Percentage: 90%</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="certifications">
+            <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications & Honours</h2>
+            <div class="certifications">
+                <div class="certification-card">
+                    <h3 class="certification-title">Google Digital Marketing & E-commerce Professional Certificate</h3>
+                    <ul>
+                        <li>Foundations of Digital Marketing and E-commerce</li>
+                        <li>Attract and Engage Customers with Digital Marketing</li>
+                        <li>From Likes to Leads: Interact with Customers Online</li>
+                        <li>Think Outside the Inbox: Email Marketing</li>
+                        <li>Assess for Success: Marketing Analytics and Measurement</li>
+                        <li>Make the Sale: Build, Launch, and Manage E-commerce Stores</li>
+                        <li>Satisfaction Guaranteed: Develop Customer Loyalty Online</li>
+                    </ul>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">HubSpot Digital Marketing Certification</h3>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Queen's Commonwealth Essay Competition (2022)</h3>
+                    <p>Bronze Award</p>
+                </div>
+                <div class="certification-card">
+                    <h3 class="certification-title">Published Poet</h3>
+                    <p>Featured in an anthology</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <h2 class="section-title"><i class="fas fa-tools"></i> Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-tasks"></i> Event & Project Management</h3>
+                    <ul class="skill-list">
+                        <li>Efficient Time Management & Prioritization</li>
+                        <li>Cross-Functional Team Management</li>
+                        <li>Collaborative Project Work & Problem-Solving</li>
+                        <li>Meeting Deadlines & Adaptability in Approach</li>
+                        <li>Managing and Motivating Teams</li>
+                        <li>Conflict Resolution & De-escalation</li>
+                    </ul>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-comments"></i> Communication & Writing</h3>
+                    <ul class="skill-list">
+                        <li>Public Speaking & Presentation</li>
+                        <li>Copywriting & Blog Writing</li>
+                        <li>Proofreading & Editing</li>
+                        <li>Storytelling & Report Writing</li>
+                        <li>Negotiation & Active Listening</li>
+                        <li>Building Relationships & Networking</li>
+                    </ul>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Leadership & Teamwork</h3>
+                    <ul class="skill-list">
+                        <li>Leadership in Volunteer Projects</li>
+                        <li>Team Collaboration in High-Pressure Environments</li>
+                        <li>Conflict Management for Win-Win Outcomes</li>
+                        <li>Empathy & Emotional Intelligence in Leadership</li>
+                        <li>Self-awareness & Self-regulation</li>
+                    </ul>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-brain"></i> Critical Thinking</h3>
+                    <ul class="skill-list">
+                        <li>Analytical Thinking & Strategic Planning</li>
+                        <li>Creative & Critical Thinking for Solutions</li>
+                        <li>Decision-Making & Strategic Problem Solving</li>
+                        <li>Managing Multiple Projects Simultaneously</li>
+                    </ul>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop"></i> Digital Marketing</h3>
+                    <ul class="skill-list">
+                        <li>SEO Strategy Development</li>
+                        <li>Content Marketing</li>
+                        <li>Social Media Management</li>
+                        <li>Email Marketing</li>
+                        <li>Google Analytics</li>
+                        <li>Data Analysis & Visualization</li>
+                    </ul>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-desktop"></i> Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+                        <li>Basic Graphic Design (Canva, Adobe Photoshop)</li>
+                        <li>Social Media Tools (Hootsuite, Buffer)</li>
+                        <li>CRM Systems (HubSpot)</li>
+                        <li>CMS (WordPress, Wix)</li>
+                    </ul>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="80"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="languages">
+            <h2 class="section-title"><i class="fas fa-language"></i> Languages</h2>
+            <div class="language-list">
+                <div class="language-item">
+                    <div class="language-name">English</div>
+                    <div class="language-level">Professional Proficiency</div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="95"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Hindi</div>
+                    <div class="language-level">Native Proficiency</div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="100"></div>
+                    </div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">French</div>
+                    <div class="language-level">Basic Proficiency</div>
+                    <div class="skill-progress">
+                        <div class="skill-progress-bar" data-width="40"></div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Spanish</div>
+                        <div class="language-level">Basic Proficiency</div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" data-width="40"></div>
+                        </div>
+                        <div class="language-item">
+                            <div class="language-name">Sanskrit</div>
+                            <div class="language-level">Basic Proficiency</div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" data-width="40"></div>
+                            </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="interests">
+            <h2 class="section-title"><i class="fas fa-heart"></i> Interests</h2>
+            <div class="interests-cloud">
+                <div class="interest-tag"><i class="fas fa-book"></i> Creative Writing</div>
+                <div class="interest-tag"><i class="fas fa-theater-masks"></i> Poetry</div>
+                <div class="interest-tag"><i class="fas fa-palette"></i> Art Appreciation</div>
+                <div class="interest-tag"><i class="fas fa-music"></i> Music</div>
+                <div class="interest-tag"><i class="fas fa-film"></i> Cinema</div>
+                <div class="interest-tag"><i class="fas fa-globe-asia"></i> Cultural Exploration</div>
+                <div class="interest-tag"><i class="fas fa-camera"></i> Photography</div>
+                <div class="interest-tag"><i class="fas fa-hiking"></i> Hiking</div>
+                <div class="interest-tag"><i class="fas fa-cookie"></i> Baking</div>
+                <div class="interest-tag"><i class="fas fa-pencil-alt"></i> Blogging</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Shreya Gupta. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-medium"></i></a>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        }
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('navToggle');
+        const navItems = document.getElementById('navItems');
+        
+        navToggle.addEventListener('click', () => {
+            navItems.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    navItems.classList.remove('active');
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top button visibility
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Skill progress bar animation
+        const skillBars = document.querySelectorAll('.skill-progress-bar');
+        
+        const animateSkillBars = () => {
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+            });
+        };
+
+        // Animate skill bars when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        if (skillBars.length > 0) {
+            observer.observe(document.querySelector('#skills'));
+        }
+
+        // Download CV functionality
+        document.getElementById('downloadCV').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('CV download initiated. Your CV will download shortly.');
+            // In a real implementation, this would trigger a file download
+        });
+
+        // Sticky navigation effect
+        const nav = document.querySelector('nav');
+        let lastScrollTop = 0;
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 200) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
+</body>
+</html>
